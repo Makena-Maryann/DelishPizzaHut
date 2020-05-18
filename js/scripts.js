@@ -5,6 +5,16 @@ function Pizza(size, crust) {
   this.selectedToppings = [];
 }
 
+Pizza.prototype.pizzaCost = function () {
+  return (
+    this.pizzaSize +
+    this.crustType +
+    this.selectedToppings.reduce(function (topping1, topping2) {
+      return topping1 + topping2;
+    }, 0)
+  );
+};
+
 //UI logic
 $(document).ready(function () {
   $("input[type='button']").click(function () {
@@ -16,6 +26,7 @@ $(document).ready(function () {
     $.each($("input[name='toppings']:checked"), function () {
       newPizza.selectedToppings.push(parseInt($(this).val()));
     });
+
     $("input[name='sizes']").val("");
     $("input[ name='crust']").val("");
     $("input[ name='toppings']").val("");
