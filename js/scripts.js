@@ -36,6 +36,12 @@ $(document).ready(function () {
     pizzaBill = newPizza.pizzaCost() * pizzaNumber;
     //alert(pizzaBill); //cost for more than one
 
+    let deliveryPlace = $("input[name='delivery']").val();
+    if (deliveryPlace != 0) {
+      alert("Your Pizza will be delivered at " + deliveryPlace);
+    }
+
+    $("input[name='delivery']").val();
     $("input[name='sizes']:checked").val("");
     $("input[ name='crust']:checked").val("");
     $("input[ name='toppings']:checked").val("");
