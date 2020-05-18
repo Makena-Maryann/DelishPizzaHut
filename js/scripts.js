@@ -7,5 +7,8 @@ function Pizza(size, crust) {
 
 //UI logic
 $(document).ready(function () {
-  $("input[type='button']").click(function () {});
+  $("input[type='button']").click(function () {
+    const sizeOfPizza = parseInt($("input[name='sizes']:checked").val());
+    const typeOfCrust = parseInt($("input[ name='crust']:checked").val());
+  });
 });
