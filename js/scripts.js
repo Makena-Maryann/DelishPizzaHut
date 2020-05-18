@@ -10,5 +10,7 @@ $(document).ready(function () {
   $("input[type='button']").click(function () {
     const sizeOfPizza = parseInt($("input[name='sizes']:checked").val());
     const typeOfCrust = parseInt($("input[ name='crust']:checked").val());
+
+    const newPizza = new Pizza(sizeOfPizza, typeOfCrust);
   });
 });
