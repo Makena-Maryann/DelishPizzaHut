@@ -17,6 +17,10 @@ Pizza.prototype.pizzaCost = function () {
 
 //UI logic
 $(document).ready(function () {
+  $(".accept").click(function () {
+    $(".location").show();
+  });
+
   $("input[type='button']").click(function () {
     const sizeOfPizza = parseInt($("input[name='sizes']:checked").val());
     const typeOfCrust = parseInt($("input[ name='crust']:checked").val());
@@ -30,7 +34,7 @@ $(document).ready(function () {
 
     const pizzaNumber = parseInt($("input[name='quantity']").val());
     pizzaBill = newPizza.pizzaCost() * pizzaNumber;
-    alert(pizzaBill);
+    //alert(pizzaBill); //cost for more than one
 
     $("input[name='sizes']:checked").val("");
     $("input[ name='crust']:checked").val("");
