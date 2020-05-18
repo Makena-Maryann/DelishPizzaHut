@@ -264,7 +264,50 @@
           </div>
 
           <div class="col-md-6 p-5">
-            <p><input type="button" class="connector" value="Place Order" /></p>
+            <!--Delivery-->
+            <div class="delivery">
+              <p class="font-weight-bold pt-4">
+                Would you like your Pizza delivered?
+              </p>
+              <div class="form-check form-check-inline size">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="deliveries"
+                  id="yes"
+                  value="yes"
+                />
+                <label class="form-check-label" for="large">
+                  Yes
+                </label>
+              </div>
+              <div class="form-check form-check-inline size">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="deliveries"
+                  id="no"
+                  value="no"
+                />
+                <label class="form-check-label" for="medium">
+                  No
+                </label>
+              </div>
+              <p class="font-weight-bold pt-4">
+                Please enter your location:
+              </p>
+              <div class="delivery col-lg-3 col-md-4 col-sm-3">
+                <input
+                  class="form-control"
+                  name="delivery"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <p class="pt-5">
+              <input type="button" class="connector" value="Place Order" />
+            </p>
           </div>
         </div>
       </div>
