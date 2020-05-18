@@ -33,8 +33,12 @@ $(document).ready(function () {
     // alert(newPizza.pizzaCost()); //cost for one pizza
 
     const pizzaNumber = parseInt($("input[name='quantity']").val());
-    pizzaBill = newPizza.pizzaCost() * pizzaNumber;
+    let pizzaBill = newPizza.pizzaCost() * pizzaNumber;
     //alert(pizzaBill); //cost for more than one
+
+    let delivery = parseInt($("input[name='deliveries']").val());
+    let totalCost = pizzaBill + delivery;
+    alert("Your bill is " + totalCost);
 
     let deliveryPlace = $("input[name='delivery']").val();
     if (deliveryPlace != 0) {
