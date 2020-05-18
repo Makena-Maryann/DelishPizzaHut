@@ -26,9 +26,14 @@ $(document).ready(function () {
     $.each($("input[name='toppings']:checked"), function () {
       newPizza.selectedToppings.push(parseInt($(this).val()));
     });
+    // alert(newPizza.pizzaCost()); //cost for one pizza
 
-    $("input[name='sizes']").val("");
-    $("input[ name='crust']").val("");
-    $("input[ name='toppings']").val("");
+    const pizzaNumber = parseInt($("input[name='quantity']").val());
+    pizzaBill = newPizza.pizzaCost() * pizzaNumber;
+    alert(pizzaBill);
+
+    $("input[name='sizes']:checked").val("");
+    $("input[ name='crust']:checked").val("");
+    $("input[ name='toppings']:checked").val("");
   });
 });
