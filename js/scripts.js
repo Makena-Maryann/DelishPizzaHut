@@ -16,5 +16,8 @@ $(document).ready(function () {
     $.each($("input[name='toppings']:checked"), function () {
       newPizza.selectedToppings.push(parseInt($(this).val()));
     });
+    $("input[name='sizes']").val("");
+    $("input[ name='crust']").val("");
+    $("input[ name='toppings']").val("");
   });
 });
