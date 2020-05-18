@@ -12,5 +12,9 @@ $(document).ready(function () {
     const typeOfCrust = parseInt($("input[ name='crust']:checked").val());
 
     const newPizza = new Pizza(sizeOfPizza, typeOfCrust);
+
+    $.each($("input[name='toppings']:checked"), function () {
+      newPizza.selectedToppings.push(parseInt($(this).val()));
+    });
   });
 });
