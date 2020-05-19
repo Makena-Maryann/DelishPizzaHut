@@ -15,15 +15,6 @@ Pizza.prototype.pizzaCost = function () {
   );
 };
 
-function resetFields() {
-  $("input[name='sizes']:checked").val("");
-  $("input[ name='crust']:checked").val("");
-  $("input[name='toppings']:checked").val("");
-  $("input[name='quantity']").val("");
-  $("input[name='deliveries']").val("");
-  $("input[name='delivery']").val("");
-}
-
 //UI logic
 $(document).ready(function () {
   $(".accept").click(function () {
@@ -53,10 +44,8 @@ $(document).ready(function () {
       $("p#place").append(
         "Your Pizza will be delivered at " + deliveryPlace + "."
       );
-    } else {
-      alert("Please enter the delivery place.");
     }
 
-    resetFields();
+    $("input[name='delivery']").val("");
   });
 });
