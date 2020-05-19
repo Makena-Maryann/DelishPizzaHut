@@ -15,6 +15,15 @@ Pizza.prototype.pizzaCost = function () {
   );
 };
 
+function resetFields() {
+  $("input[name='sizes']:checked").val("");
+  $("input[ name='crust']:checked").val("");
+  $("input[name='toppings']:checked").val("");
+  $("input[name='quantity']").val("");
+  $("input[name='deliveries']").val("");
+  $("input[name='delivery']").val("");
+}
+
 //UI logic
 $(document).ready(function () {
   $(".accept").click(function () {
@@ -30,24 +39,24 @@ $(document).ready(function () {
     $.each($("input[name='toppings']:checked"), function () {
       newPizza.selectedToppings.push(parseInt($(this).val()));
     });
-    // alert(newPizza.pizzaCost()); //cost for one pizza
 
     const pizzaNumber = parseInt($("input[name='quantity']").val());
     let pizzaBill = newPizza.pizzaCost() * pizzaNumber;
-    //alert(pizzaBill); //cost for more than one
 
     let delivery = parseInt($("input[name='deliveries']").val());
     let totalCost = pizzaBill + delivery;
-    alert("Your bill is " + totalCost);
+
+    $("p#charges").append("Your Bill is " + totalCost + ".");
 
     let deliveryPlace = $("input[name='delivery']").val();
     if (deliveryPlace != 0) {
-      alert("Your Pizza will be delivered at " + deliveryPlace);
+      $("p#place").append(
+        "Your Pizza will be delivered at " + deliveryPlace + "."
+      );
+    } else {
+      alert("Please enter the delivery place.");
     }
 
-    $("input[name='delivery']").val();
-    $("input[name='sizes']:checked").val("");
-    $("input[ name='crust']:checked").val("");
-    $("input[ name='toppings']:checked").val("");
+    resetFields();
   });
 });
