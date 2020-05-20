@@ -34,7 +34,6 @@ $(document).ready(function () {
     const pizzaNumber = $("input[name='quantity']").val();
 
     let pizzaBill = newPizza.pizzaCost() * pizzaNumber;
-
     let delivery = parseInt($("input[name='deliveries']:checked").val());
     let totalCost = pizzaBill + delivery;
 
