@@ -31,10 +31,11 @@ $(document).ready(function () {
       newPizza.selectedToppings.push(parseInt($(this).val()));
     });
 
-    const pizzaNumber = parseInt($("input[name='quantity']").val());
+    const pizzaNumber = $("input[name='quantity']").val();
+
     let pizzaBill = newPizza.pizzaCost() * pizzaNumber;
 
-    let delivery = parseInt($("input[name='deliveries']").val());
+    let delivery = parseInt($("input[name='deliveries']:checked").val());
     let totalCost = pizzaBill + delivery;
 
     $("p#charges").append("Your Bill is " + totalCost + ".");
